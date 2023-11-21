@@ -1,0 +1,30 @@
+{
+  "name": "api-cardless",
+  "version": "1.0.0",
+  "description": "Pilot-project automation test on API for features cardless",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "login": "mocha D:/Exploration/api-cardless/tests/scenarios/POST_loginv2.spec.js --timeout 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adidata23/api-cardless.git"
+  },
+  "author": "Hisyam Hasibuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adidata23/api-cardless/issues"
+  },
+  "homepage": "https://github.com/adidata23/api-cardless#readme",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "chai-json-schema": "^1.5.1"
+  }
+}
