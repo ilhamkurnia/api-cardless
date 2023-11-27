@@ -5,8 +5,8 @@ const expect = require("chai").expect;
 chai.use(chaiHttp);
 const auth = require("../api/POST_loginv2.api")
 const data = require("../../data/data.json")
-const execute = require("../api/POST_execute.api")
-
+const executeApi = require("../api/POST_execute.api")
+const {execute} = require ("../../data/execute.data")
 describe("TC Execute", () => {
     let token = "";
 
@@ -19,9 +19,10 @@ describe("TC Execute", () => {
         token = response.header.access_token
     });
 
-    it("TC Post Execute Cardless", async () => {
-        const response = await new execute().postExecute(token, {
-        });
+    execute.forEach((item) =>{
+    it(item.case.title, async () => {
+        const response = await new executeApi().postExecute(token,item.payload);
         expect(response.statusCode).to.be.equal(201);
+    })
     })
 })

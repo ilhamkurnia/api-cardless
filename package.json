@@ -4,8 +4,16 @@
   "description": "Pilot-project automation test on API for features cardless",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "login": "mocha D:/Exploration/api-cardless/tests/scenarios/POST_loginv2.spec.js --timeout 5000"
+    "regression": "mocha ./tests/scenario/**/*.js --timeout 5000",
+    "error": "echo \"Error: no test specified\" && exit 1",
+    "login": "mocha D:/Exploration/api-cardless/tests/scenario/POST_loginv2.spec.js --timeout 5000",
+    "parameter": "mocha D:/Exploration/api-cardless/tests/scenario/POST_parameter.spec.js --timeout 5000",
+    "inquiry": "mocha D:/Exploration/api-cardless/tests/scenario/POST_inquiry.spec.js --timeout 5000",
+    "execute": "mocha D:/Exploration/api-cardless/tests/scenario/POST_execute.spec.js --timeout 5000",
+    "regression:mochawesome": "mocha ./tests/scenarios/*.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true",
+    "login:mochawesome": "mocha D:/Exploration/api-cardless/tests/scenario/POST_loginv2.spec.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true"
+
+
   },
   "repository": {
     "type": "git",
@@ -25,6 +33,7 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "dependencies": {
-    "chai-json-schema": "^1.5.1"
+    "chai-json-schema": "^1.5.1",
+    "to-json-schema": "^0.2.5"
   }
 }

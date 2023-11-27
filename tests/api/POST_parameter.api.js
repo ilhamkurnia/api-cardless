@@ -16,7 +16,6 @@ class parameter {
         .set("Authorization", "Bearer " + token)
         .set("Content-Type", this.header)
         .set("Accept", this.header)
-        .send(payload);
         return response;
     }
 }

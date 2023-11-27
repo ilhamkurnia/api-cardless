@@ -5,7 +5,8 @@ const expect = require("chai").expect;
 chai.use(chaiHttp);
 const auth = require("../api/POST_loginv2.api")
 const data = require("../../data/data.json")
-const inquiry = require("../api/POST_inquiry.api")
+const inquiryApi = require("../api/POST_inquiry.api")
+const {inquiry} = require ("../../data/inquiry.data")
 
 describe("TC Inquiry Cardless", () => {
     let token = "";
@@ -19,9 +20,10 @@ describe("TC Inquiry Cardless", () => {
         token = response.header.access_token
     });
 
+    inquiry.forEach((item) => {
     it("TC Post Inquiry Cardless", async () => {
-        const response = await new inquiry().postInquiry(token, {
-        });
-        expect(response.statusCode).to.be.equal(201);
+        const response = await new inquiryApi().postInquiry(token, item.payload);
+        expect(response.statusCode).to.be.equal(item.case.status);
+    })
     })
 })

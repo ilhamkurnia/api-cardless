@@ -9,9 +9,9 @@ const {login} = require("../../data/login.data");
 describe("TestCase Authentication", () => {
     login.forEach((item) => {
         it(item.case.title, async () => {
-        const response = await new auth.login(item.payload);
-        expect(response.status).to.be.equal(item.case.status)
-    })
+        const response = await new auth().login(item.payload);
+        expect(response.statusCode).to.be.equal(item.case.status);
+        });
     });
     
 });

@@ -1,7 +1,7 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 const data = require("../../data/data.json");
-const { execute } = require("../../data/execute.data")
+const { executeData } = require("../../data/execute.data")
 chai.use(chaiHttp);
 
 class execute {

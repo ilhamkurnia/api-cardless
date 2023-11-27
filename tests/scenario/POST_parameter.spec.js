@@ -5,9 +5,10 @@ const expect = require("chai").expect;
 chai.use(chaiHttp);
 const auth = require("../api/POST_loginv2.api")
 const data = require("../../data/data.json")
-const parameter = require("../api/POST_parameter.api")
+const {parameter} = require("../../data/parameter_list.data")
+const parameterApi = require("../api/POST_parameter.api")
 
-describe("TC Parameter", () => {
+describe("TC GET Parameter", () => {
     let token = "";
 
     before(async () => {
@@ -18,10 +19,11 @@ describe("TC Parameter", () => {
         });
         token = response.header.access_token
     });
-
-    it("TC Get Parameter Cardless", async () => {
-        const response = await new parameter().getParameter(token, {
+    parameter.forEach((item) =>{
+    it(item.case.title, async () => {
+        const response = await new parameterApi().getParameter(token, {
         });
-        expect(response.statusCode).to.be.equal(201);
+        expect(response.statusCode).to.be.equal(item.case.status);
+    })
     })
 })

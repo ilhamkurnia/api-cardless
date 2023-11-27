@@ -3,7 +3,7 @@ const chaiHttp = require("chai-http");
 const data = require("../../data/data.json");
 chai.use(chaiHttp);
 
-class authentication {
+class auth {
     constructor() {
         this.host = data.baseURL;
         this.header = data.header;
@@ -16,8 +16,8 @@ class authentication {
             .send(payload)
             .set("Content-Type", this.header)
             .set("Accept", this.header)
-        return response
+        return response;
     }
 }
 
-module.exports = authentication
+module.exports = auth;
