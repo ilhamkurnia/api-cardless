@@ -7,11 +7,17 @@
     "regression": "mocha ./tests/scenario/**/*.js --timeout 5000",
     "error": "echo \"Error: no test specified\" && exit 1",
     "login": "mocha D:/Exploration/api-cardless/tests/scenario/POST_loginv2.spec.js --timeout 5000",
-    "parameter": "mocha D:/Exploration/api-cardless/tests/scenario/POST_parameter.spec.js --timeout 5000",
-    "inquiry": "mocha D:/Exploration/api-cardless/tests/scenario/POST_inquiry.spec.js --timeout 5000",
+    "parameter": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/POST_parameter.spec.js --timeout 5000",
+    "inquiry": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/POST_inquiry.spec.js --timeout 5000",
     "execute": "mocha D:/Exploration/api-cardless/tests/scenario/POST_execute.spec.js --timeout 5000",
     "regression:mochawesome": "mocha ./tests/scenarios/*.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true",
-    "login:mochawesome": "mocha D:/Exploration/api-cardless/tests/scenario/POST_loginv2.spec.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true"
+    "login:mochawesome": "mocha D:/Exploration/api-cardless/tests/scenario/POST_loginv2.spec.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true",
+    "infaqbiller": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/infaq/POST_billerlist.spec.js --timeout 5000",
+    "infaqscheduleinfo": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/infaq/POST_scheduleinfo.spec.js --timeout 5000",
+    "infaqpayment:report": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/infaq/POST_payment.spec.js --timeout 5000 --reporter mochawesome --reporter-option autoOpen=true",
+    "sof": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/POST_soflist.spec.js --timeout 5000",
+    "sof:report": "mocha C:/Users/User/Documents/api-cardless/tests/scenario/POST_soflist.spec.js --timeout 15000"
+
 
 
   },

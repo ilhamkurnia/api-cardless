@@ -5,10 +5,10 @@ const expect = require("chai").expect;
 chai.use(chaiHttp);
 const auth = require("../api/POST_loginv2.api")
 const data = require("../../data/data.json")
-const executeApi = require("../api/POST_execute.api")
-const {execute} = require ("../../data/execute.data")
+const sofApi = require("../api/POST_soflist.api")
+const {sofList} = require ("../../data/myAccount.data")
 
-describe("TC Execute", () => {
+describe("TC SOF", () => {
     let token = "";
 
     before(async () => {
@@ -20,10 +20,11 @@ describe("TC Execute", () => {
         token = response.header.access_token
     });
 
-    execute.forEach((item) =>{
-    it(item.case.title, async () => {
-        const response = await new executeApi().postExecute(token,item.payload);
-        expect(response.statusCode).to.be.equal(201);
+    sofList.forEach((item) => {
+    it("TC Post SOF", async () => {
+        const response = await new sofApi().postSOF(token, item.payload);
+        // console.log(response.text)
+        expect(response.statusCode).to.be.equal(item.case.status);
     })
     })
 })
